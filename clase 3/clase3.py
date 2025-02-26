@@ -1,6 +1,5 @@
-from tkinter import Frame, Tk
+from tkinter import Frame, Tk 
 from tkinter.messagebox import askyesno
-from tkinter import Label
 
 ventanaPrincipal = Tk()
 ventanaPrincipal.title("Prueba de eventos")
@@ -13,7 +12,7 @@ def presionar_tecla(event):
     print("pressed", repr(event.char))
 
 def el_usuario_quiere_salir():
-    if askyesno("Salir", "¿Está seguro que desea salir?"):
+    if askyesno("Salir de la aplicación", "¿Seguro que quieres cerrar la aplicación?"):
         ventanaPrincipal.destroy()
 
 frame = Frame(ventanaPrincipal, width=500, height=500)
