@@ -1,6 +1,5 @@
 from tkinter import Frame, Tk
 from tkinter.messagebox import askyesno
-from tkinter import Label
 
 ventanaPrincipal = Tk()
 ventanaPrincipal.title("Prueba de eventos")
