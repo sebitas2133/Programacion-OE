@@ -38,7 +38,7 @@ def evento_presionar_tecla_titulo(event):
         texto_validar_titulo = ""
     else:
         texto_validar_titulo = "Solo se permite letras"
-       labelValidacionTitulo.config(text = texto_validar_titulo, fg="blue")
+        labelValidacionTitulo.config(text = texto_validar_titulo, fg="blue")
 
 def evento_presionar_tecla_autor(event):
     global autor
@@ -48,7 +48,7 @@ def evento_presionar_tecla_autor(event):
         texto_validar_autor= ""
     else:
         texto_validar_autor = "Solo se permite letras"
-       labelValidacionAutor.config(text = texto_validar_autor, fg="blue")
+        labelValidacionAutor.config(text = texto_validar_autor, fg="blue")
 
 def evento_presionar_tecla_genero(event):
     global genero
@@ -58,7 +58,7 @@ def evento_presionar_tecla_genero(event):
         texto_validar_genero= ""
     else:
         texto_validar_genero = "Solo se permite letras"
-       labelValidacionGenero.config(text = texto_validar_genero, fg="blue")
+        labelValidacionGenero.config(text = texto_validar_genero, fg="blue")
 
 def evento_presionar_tecla_año(event):
     global año_publicacion
@@ -68,7 +68,7 @@ def evento_presionar_tecla_año(event):
         texto_validar_año= ""
     else:
         texto_validar_año = "Solo se permite numeros"
-       labelValidacionAño_Publicacion.config(text = texto_validar_año, fg="blue")
+        labelValidacionAño_Publicacion.config(text = texto_validar_año, fg="blue")
 
 
 frame = Frame(ventanaPrincipal)
