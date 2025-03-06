@@ -53,7 +53,7 @@ boton = Button(frame, text="Guardar", bg="black", fg="white", width=10,
              activeforeground="white", bd = 0.5).grid(row=9, column=0, columnspan=2)
 
 def validarLetras(valor):
-    patron =  re.compile("^[a-zA-ZnÑ ]*$")
+    patron =  re.compile("^[a-zA-ZñÑ ]*$")
     resultado = patron.match(valor.get()) is not None
     if not resultado:
         return False
