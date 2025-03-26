@@ -18,7 +18,6 @@ frame.pack()
 titulo_label = Label(frame, text="INTRODUZCA LOS SIGUIENTES REQUERIMIENTOS", bg="#1E1E1E", fg="white", height=3, font=("Helvetica", 11, "bold"))
 titulo_label.grid(row=0, column=0, columnspan=2)
 
-
 nombre = StringVar(frame)
 nombre_label = Label(frame, text="Nombre:", bg="#1E1E1E", fg="white").grid(row=1, column=0)
 nombre_entry = Entry(frame, textvariable=nombre)
