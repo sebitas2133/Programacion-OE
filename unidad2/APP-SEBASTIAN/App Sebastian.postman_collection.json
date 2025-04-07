@@ -143,7 +143,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/clientes/4/",
+					"raw": "http://127.0.0.1:8000/api/Comida/2/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -154,8 +154,8 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"clientes",
-						"4",
+						"Comida",
+						"2",
 						""
 					]
 				}
