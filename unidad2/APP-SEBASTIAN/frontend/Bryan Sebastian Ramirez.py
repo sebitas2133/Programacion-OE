@@ -114,5 +114,4 @@ ingrediente_principal_enty.bind("<KeyRelease>", evento_presionar_tecla_ingredien
 calorias_entry.bind("<KeyRelease>", evento_presionar_tecla_calorias)
 peso_entry.bind("<KeyRelease>", evento_presionar_tecla_peso)
 
-
 ventanaPrincipal.mainloop()
