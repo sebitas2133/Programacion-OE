@@ -76,60 +76,60 @@ texto_validar_peso = ""
 ventanaPrincipal = Tk()
 ventanaPrincipal.title("Comida")
 ventanaPrincipal.geometry("500x400")
-ventanaPrincipal.config(bg="#1E1E1E")
+ventanaPrincipal.config(bg="#121212")
 
-frame = Frame(ventanaPrincipal, width=600, height=500, bg="#1E1E1E")
+frame = Frame(ventanaPrincipal, width=600, height=500, bg="#121212")
 frame.pack_propagate(False)
 frame.pack()
 
-titulo_label = Label(frame, text="INTRODUZCA LOS SIGUIENTES REQUERIMIENTOS", bg="#1E1E1E", fg="white", height=3, font=("Helvetica", 11, "bold"))
+titulo_label = Label(frame, text="INTRODUZCA LOS SIGUIENTES REQUERIMIENTOS", bg="#121212", fg="#39ff14", height=3, font=("Helvetica", 11, "bold"))
 titulo_label.grid(row=0, column=0, columnspan=3)
 
 id = StringVar(frame)
-id_label = Label(frame, text="ID:", bg="#1E1E1E", fg="white")
+id_label = Label(frame, text="ID:", bg="#121212", fg="#39ff14")
 id_label.grid(row=1, column=0, pady=5)
 id_entry = Entry(frame, textvariable=id)
 id_entry.grid(row=1, column=1, pady=5)
 
-BotonConsultar = Button(frame, text="Consultar", bg="black", fg="white", width=10,
-                         activebackground="#1E1E1E",
-                         activeforeground="white", bd = 0.5,
+BotonConsultar = Button(frame, text="Consultar", bg="#222222", fg="#39ff14", width=10,
+                         activebackground="#39ff14",
+                         relief="flat",
                          command=lambda:buscar())
 BotonConsultar.grid(row=1, column=2, pady=5, padx=5)
 
 nombre = StringVar(frame)
-nombre_label = Label(frame, text="Nombre:", bg="#1E1E1E", fg="white").grid(row=2, column=0)
+nombre_label = Label(frame, text="Nombre:", bg="#121212", fg="#39ff14").grid(row=2, column=0)
 nombre_entry = Entry(frame, textvariable=nombre)
 nombre_entry.grid(row=2, column=1)
-label_Error_nombre = Label(frame, text="", bg="#1E1E1E", fg="white")
+label_Error_nombre = Label(frame, text="", bg="#121212", fg="#39ff14")
 label_Error_nombre.grid(row=2, column=2, pady=2, columnspan=2)
 
 ingrediente_principal = StringVar(frame)
-ingrediente_principal_label = Label(frame, text="Ingrediente principal: ", bg="#1E1E1E", fg="white").grid(row=4, column=0)
+ingrediente_principal_label = Label(frame, text="Ingrediente principal: ", bg="#121212", fg="#39ff14").grid(row=4, column=0)
 ingrediente_principal_enty = Entry(frame, textvariable=ingrediente_principal)
 ingrediente_principal_enty.grid(row=4, column=1)
-label_Error_ingrediente_principal = Label(frame, text="", bg="#1E1E1E", fg="white")
+label_Error_ingrediente_principal = Label(frame, text="", bg="#121212", fg="#39ff14")
 label_Error_ingrediente_principal.grid(row=4, column=2, columnspan=2, pady=2)
 
 calorias = StringVar(frame)
-calorias_label = Label(frame, text="Calorias:", bg="#1E1E1E", fg="white").grid(row=6, column=0)
+calorias_label = Label(frame, text="Calorias:", bg="#121212", fg="#39ff14").grid(row=6, column=0)
 calorias_entry = Entry(frame, textvariable=calorias)
 calorias_entry.grid(row=6, column=1)
-label_Error_calorias = Label(frame, text="", bg="#1E1E1E", fg="white")
+label_Error_calorias = Label(frame, text="", bg="#121212", fg="#39ff14")
 label_Error_calorias.grid(row=6, column=2, columnspan=2, pady=2)
 
 peso = StringVar(frame)
-peso_label = Label(frame, text="Peso (g):", bg="#1E1E1E", fg="white").grid(row=8, column=0)
+peso_label = Label(frame, text="Peso (g):", bg="#121212", fg="#39ff14").grid(row=8, column=0)
 peso_entry = Entry(frame, textvariable=peso)
 peso_entry.grid(row=8, column=1)
-label_Error_peso = Label(frame, text="", bg="#1E1E1E", fg="white")
+label_Error_peso = Label(frame, text="", bg="#121212", fg="#39ff14")
 label_Error_peso.grid(row=8, column=2, columnspan=2, pady=2)
 
 
-BotonGuardar = Button(frame, text="Guardar", bg="black", fg="white", width=10,
-             activebackground="#1E1E1E",
-             activeforeground="white", bd = 0.5,
-             command= lambda:guardar(
+BotonGuardar = Button(frame, text="Guardar", bg="#222222", fg="#39ff14", width=10,
+                     activebackground="#39ff14",
+                     relief="flat",
+                     command= lambda:guardar(
                                       nombre.get(), 
                                       ingrediente_principal.get(), 
                                       calorias.get(), 
@@ -137,16 +137,16 @@ BotonGuardar = Button(frame, text="Guardar", bg="black", fg="white", width=10,
 
 BotonGuardar.grid(row=10, column=0, columnspan=3, pady=5)
 
-BotonActualizar = Button(frame, text="Actualizar", bg="black", fg="white", width=10,
-                         activebackground="#1E1E1E",
-                         activeforeground="white", bd = 0.5, 
+BotonActualizar = Button(frame, text="Actualizar", bg="#222222", fg="#39ff14", width=10,
+                         activebackground="#39ff14",
+                         relief="flat", 
                          command=lambda:actualizar())
 
 BotonActualizar.grid(row=11, column=0, columnspan=3, pady=5)
 
-BotonEliminar = Button(frame, text="Eliminar", bg="black", fg="white", width=10,
-                         activebackground="#1E1E1E",
-                         activeforeground="white", bd = 0.5, 
+BotonEliminar = Button(frame, text="Eliminar", bg="#222222", fg="#39ff14", width=10,
+                         activebackground="#39ff14",
+                         relief="flat", 
                          command=lambda:eliminar())
 
 BotonEliminar.grid(row=12, column=0, columnspan=3, pady=5)
