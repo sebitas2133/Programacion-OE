@@ -5,18 +5,15 @@ class Tabla():
      
     def __init__(self, frame, titulos, columnas, data):
 
-        #estilo para ponerle fondo blanco y letras negras a la tabla
         estilo = ttk.Style()
         estilo.theme_use('clam')
         estilo.configure("Treeview", background="#121212", foreground="#39ff14", fieldbackground="#121212", borderwidth=0, relief="flat")
         estilo.configure("Treeview.Heading", background="#gray16", foreground="#39ff14")
 
-        #cambia el color de una fila seleccionada
         estilo.map('Treeview', background=[('selected', '#39ff14')], foreground=[('selected', '#121212')])
     
         self.tabla = ttk.Treeview(frame, columns=columnas, show='headings')
-
-        #Cambiar color alterno de las filas
+        
         self.tabla.tag_configure('fila_par', background='gray4')
         self.tabla.tag_configure('fila_impar', background='#121212')
 
