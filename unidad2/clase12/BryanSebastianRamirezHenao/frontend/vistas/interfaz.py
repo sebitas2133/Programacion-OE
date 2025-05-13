@@ -6,6 +6,7 @@ from .tablas import Tabla
 from tkinter import * 
 from tkinter import messagebox
 
+
 class Interfaz():
 
     def __init__(self):

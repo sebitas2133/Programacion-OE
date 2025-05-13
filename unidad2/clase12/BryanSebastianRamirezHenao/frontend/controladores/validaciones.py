@@ -1,5 +1,6 @@
 import re
 
+
 class Validaciones():
     
     def __init__(self):

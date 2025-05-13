@@ -21,8 +21,6 @@ class Comunicacion():
         except:
             pass
 
-
-
     def actualizar(self, id, nombre, ingrediente_principal, calorias, peso):
         comida_id = id
         if comida_id:

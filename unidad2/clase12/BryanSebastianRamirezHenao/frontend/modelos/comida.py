@@ -1,5 +1,6 @@
 from tkinter import *
 
+
 class Comida():
     
     def __init__(self, ventanaPrincipal):
