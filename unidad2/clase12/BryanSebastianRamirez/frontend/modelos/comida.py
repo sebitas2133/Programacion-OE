@@ -10,3 +10,4 @@ class Comida():
         self.ingrediente_principal = StringVar(ventanaPrincipal)
         self.calorias = StringVar(ventanaPrincipal)
         self.peso = StringVar(ventanaPrincipal)
+        
