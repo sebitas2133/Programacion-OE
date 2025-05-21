@@ -1,7 +1,7 @@
 import tkinter as tk
 from controladores.comunicacion import Comunicacion
 from controladores.validaciones import Validaciones
-from modelos.comida import Comida
+from modelos.Comida import Comida
 from .tablas import Tabla
 from tkinter import * 
 from tkinter import messagebox
@@ -18,6 +18,7 @@ class Interfaz():
         self.comunicacion = Comunicacion(self.VentanaPrincipal)
         self.validaciones = Validaciones()
         self.tabla = Tabla(self.frameTabla, titulos, columnas, data)
+        self.comida = Comida(self.VentanaPrincipal)
         pass
 
     def accion_guardar_boton(self, nombre, ingrediente_principal, calorias, peso):
@@ -112,10 +113,9 @@ class Interfaz():
         titulo_label = Label(self.frame, text="INTRODUZCA LOS SIGUIENTES REQUERIMIENTOS", bg="#121212", fg="#39ff14", height=3, font=("Helvetica", 11, "bold"))
         titulo_label.grid(row=0, column=0, columnspan=3)
 
-        self.id = StringVar(self.frame)
         id_label = Label(self.frame, text="ID:", bg="#121212", fg="#39ff14")
         id_label.grid(row=1, column=0, pady=5)
-        id_entry = Entry(self.frame, textvariable=self.id)
+        id_entry = Entry(self.frame, textvariable=self.comida.id)
         id_entry.grid(row=1, column=1, pady=5)
 
         BotonConsultar = Button(self.frame, text="Consultar", bg="#222222", fg="#39ff14", width=10,
@@ -124,30 +124,27 @@ class Interfaz():
                                 command=lambda: self.accion_consultar_boton( id_entry.get()))
         BotonConsultar.grid(row=1, column=2, pady=5)
 
-        self.nombre = StringVar(self.frame)
+        
         nombre_label = Label(self.frame, text="Nombre:", bg="#121212", fg="#39ff14").grid(row=2, column=0)
-        nombre_entry = Entry(self.frame, textvariable=self.nombre)
+        nombre_entry = Entry(self.frame, textvariable=self.comida.nombre)
         nombre_entry.grid(row=2, column=1)
         label_Error_nombre = Label(self.frame, text="", bg="#121212", fg="#39ff14")
         label_Error_nombre.grid(row=2, column=2, pady=2, columnspan=2)
 
-        self.ingrediente_principal = StringVar(self.frame)
         ingrediente_principal_label = Label(self.frame, text="Ingrediente principal: ", bg="#121212", fg="#39ff14").grid(row=4, column=0)
-        ingrediente_principal_enty = Entry(self.frame,  textvariable=self.ingrediente_principal)
+        ingrediente_principal_enty = Entry(self.frame,  textvariable=self.comida.ingrediente_principal)
         ingrediente_principal_enty.grid(row=4, column=1)
         label_Error_ingrediente_principal = Label(self.frame, text="", bg="#121212", fg="#39ff14")
         label_Error_ingrediente_principal.grid(row=4, column=2, columnspan=2, pady=2)
 
-        self.calorias = StringVar(self.frame)
         calorias_label = Label(self.frame, text="Calorias:", bg="#121212", fg="#39ff14").grid(row=6, column=0)
-        calorias_entry = Entry(self.frame, textvariable=self.calorias)
+        calorias_entry = Entry(self.frame, textvariable=self.comida.calorias)
         calorias_entry.grid(row=6, column=1)
         label_Error_calorias = Label(self.frame, text="", bg="#121212", fg="#39ff14")
         label_Error_calorias.grid(row=6, column=2, columnspan=2, pady=2)
 
-        self.peso = StringVar(self.frame)
         peso_label = Label(self.frame, text="Peso (g):", bg="#121212", fg="#39ff14").grid(row=8, column=0,)
-        peso_entry = Entry(self.frame, textvariable=self.peso)
+        peso_entry = Entry(self.frame, textvariable=self.comida.peso)
         peso_entry.grid(row=8, column=1)
         label_Error_peso = Label(self.frame, text="", bg="#121212", fg="#39ff14")
         label_Error_peso.grid(row=8, column=2, columnspan=2, pady=2)
@@ -184,7 +181,7 @@ class Interfaz():
 
 
         def evento_presionar_tecla_nombre(event):
-            if self.validaciones.validarLetras(self.nombre):
+            if self.validaciones.validarLetras(self.comida.nombre):
                 self.texto_validar_nombre = ""
             else:
                 self.texto_validar_nombre = "<- Solo se permiten letras"
@@ -192,21 +189,21 @@ class Interfaz():
 
         
         def evento_presionar_tecla_ingrediente(event):
-            if self.validaciones.validarLetras(self.ingrediente_principal):
+            if self.validaciones.validarLetras(self.comida.ingrediente_principal):
                 self.texto_validar_ingrediente_principal = ""
             else:
                 self.texto_validar_ingrediente_principal = "<- Solo se permiten letras"
             label_Error_ingrediente_principal.config(text=self.texto_validar_ingrediente_principal)
 
         def evento_presionar_tecla_calorias(event):
-            if self.validaciones.validarNumeros(self.calorias):
+            if self.validaciones.validarNumeros(self.comida.calorias):
                 self.texto_validar_calorias = ""
             else:
                 self.texto_validar_calorias = "<- Solo se permiten numeros"
             label_Error_calorias.config(text=self.texto_validar_calorias)
 
         def evento_presionar_tecla_peso(event):
-            if self.validaciones.validarNumeros(self.peso):
+            if self.validaciones.validarNumeros(self.comida.peso):
                 self.texto_validar_peso = ""
             else:
                 self.texto_validar_peso = "<- Solo se permiten numeros"
