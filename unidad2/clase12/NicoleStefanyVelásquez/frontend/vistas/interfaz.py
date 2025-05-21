@@ -2,6 +2,7 @@ from tkinter import *
 import tkinter as tk
 from controladores.comunicacion import Comunicacion
 from controladores.validaciones import Validaciones
+from modelos.libro import Libro
 from .tabla import Tabla
 from tkinter import messagebox
 
@@ -16,7 +17,8 @@ class Interfaz():
         self.comunicacion = Comunicacion(self.ventanaPrincipal)
         self.validaciones = Validaciones()
         self.tabla = Tabla(self.frameTabla, titulos, columnas, data)
-    
+        self.libro = Libro(self.ventanaPrincipal)
+
     def accion_guardar_boton(self, titulo, autor, genero, año_publicacion):
         resultado = self.comunicacion.guardar(titulo, autor, genero, año_publicacion)
         
@@ -98,39 +100,34 @@ class Interfaz():
         labelmensaje = Label(self.frame, text="Hola! Por favor ingresa los siguientes datos del libro:", font=("Times New Roman", 14, "bold"), bg= "alice blue", fg= "dark turquoise")
         labelmensaje.grid(row=0, column=0, columnspan=4, pady=5)
         
-        self.id = StringVar(self.frame)
         labelid = Label(self.frame, text="id",bg='alice blue')
         labelid.grid(row=1, column=0,sticky='we')
-        entryid = Entry(self.frame, textvariable= self.id, width=30)
+        entryid = Entry(self.frame, textvariable= self.libro.id, width=30)
         entryid.grid(row=1, column=1, sticky='w')
 
         boton_consultar = Button(self.frame, text="Consultar", width=9,font=("Arial", 10, "bold"), bg="dark turquoise", fg="white",relief="flat", command=lambda: self.accion_consultar_boton(entryid.get()))
         boton_consultar.grid(row=1, column=2, pady=3, padx=5, sticky='we')
 
-        self.titulo = StringVar(self.frame)
         labeltitulo =Label(self.frame, text="Título",bg='alice blue').grid(row=2, column=0,sticky='we')
-        entrytitulo = Entry(self.frame, textvariable= self.titulo,width=30)
+        entrytitulo = Entry(self.frame, textvariable= self.libro.titulo,width=30)
         entrytitulo.grid(row=2, column=1,sticky='w')
         self.labelValidacionTitulo =Label(self.frame, text="",bg='alice blue')
         self.labelValidacionTitulo.grid(row=2, column=2, pady=2, columnspan=2)
 
-        self.autor = StringVar(self.frame)
         labelautor =Label(self.frame, text="Autor",bg='alice blue').grid(row=4, column=0,sticky='we')
-        entryautor = Entry(self.frame, textvariable= self.autor,width=30)
+        entryautor = Entry(self.frame, textvariable= self.libro.autor,width=30)
         entryautor.grid(row=4, column=1,sticky='w')
         self.labelValidacionAutor=Label(self.frame, text="",bg='alice blue')
         self.labelValidacionAutor.grid(row=4, column=2, columnspan=2, pady=2)
 
-        self.genero = StringVar(self.frame)
         labelgenero = Label(self.frame, text="Género",bg='alice blue').grid(row=6, column=0,sticky='we')
-        entrygenero = Entry(self.frame, textvariable= self.genero,width=30)
+        entrygenero = Entry(self.frame, textvariable= self.libro.genero,width=30)
         entrygenero.grid(row=6, column=1,sticky='w')
         self.labelValidacionGenero =Label(self.frame, text="",bg='alice blue')
         self.labelValidacionGenero.grid(row=6, column=2, columnspan=2, pady=2)
 
-        self.año_publicacion = StringVar(self.frame)
         labelaño_publicacion = Label(self.frame, text="Año de Publicación",bg='alice blue').grid(row=8, column=0,sticky='we')
-        entryaño_publicacion = Entry(self.frame, textvariable= self.año_publicacion,width=30)
+        entryaño_publicacion = Entry(self.frame, textvariable= self.libro.año_publicacion,width=30)
         entryaño_publicacion.grid(row=8, column=1,sticky='w')
         self.labelValidacionAño_Publicacion =Label(self.frame, text="",bg='alice blue')
         self.labelValidacionAño_Publicacion.grid(row=8, column=2, columnspan=2, pady=2)
@@ -150,21 +147,21 @@ class Interfaz():
         self.tabla.tabla.grid(row=14, column=0, columnspan=4, pady=5, padx=5, sticky='nsew')
 
         def evento_presionar_tecla_titulo(event):
-            if self.validaciones.validar_letras(self.titulo):
+            if self.validaciones.validar_letras(self.libro.titulo):
                 self.texto_validar_titulo = ""
             else:
                 self.texto_validar_titulo = "Solo se permiten letras"
             self.labelValidacionTitulo.config(text=self.texto_validar_titulo, fg="dark turquoise")
 
         def evento_presionar_tecla_autor(event):
-            if self.validaciones.validar_letras(self.autor):
+            if self.validaciones.validar_letras(self.libro.autor):
                 self.texto_validar_autor = ""
             else:
                 self.texto_validar_autor = "Solo se permiten letras"
             self.labelValidacionAutor.config(text=self.texto_validar_autor, fg="dark turquoise")
 
         def evento_presionar_tecla_genero(event):
-            if self.validaciones.validar_letras(self.genero):
+            if self.validaciones.validar_letras(self.libro.genero):
                 self.texto_validar_genero = ""
             else:
                 self.texto_validar_genero = "Solo se permiten letras"
@@ -172,7 +169,7 @@ class Interfaz():
         
 
         def evento_presionar_tecla_año(event):
-            if self.validaciones.validar_numeros(self.año_publicacion):
+            if self.validaciones.validar_numeros(self.libro.año_publicacion):
                 self.texto_validar_año = ""
             else:
                 self.texto_validar_año = "Solo se permiten numeros"
