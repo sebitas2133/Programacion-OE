@@ -1,0 +1,35 @@
+ID: 1
+Nombre: Ariana Godoy
+Nacionalidad: Venezolana
+Edad: 35
+
+ID: 2
+Nombre: Joana Marcús
+Nacionalidad: Española
+Edad: 24
+
+ID: 3
+Nombre: Karen M. McManus
+Nacionalidad: Estadounidense
+Edad: 55
+
+ID: 4
+Nombre: John Green
+Nacionalidad: Estadounidense
+Edad: 47
+
+ID: 6
+Nombre: Stephen King
+Nacionalidad: Estadounidense
+Edad: 77
+
+ID: 10
+Nombre: Taylor Jenkins Reid
+Nacionalidad: Estadounidense
+Edad: 41
+
+ID: 11
+Nombre: Mario Mendoza
+Nacionalidad: Colombiano
+Edad: 61
+

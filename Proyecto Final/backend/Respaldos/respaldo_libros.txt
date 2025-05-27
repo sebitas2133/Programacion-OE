@@ -1,0 +1,63 @@
+ID: 1
+Título: Fleur
+Autor: Ariana Godoy
+Género: Thriller
+Páginas: 336
+Año: 2022
+
+ID: 2
+Título: Antes de Diciembre
+Autor: Joana Marcus
+Género: Romance
+Páginas: 496
+Año: 2021
+
+ID: 3
+Título: Alguien esta mintiendo
+Autor: Karen M. McManus
+Género: Thriller
+Páginas: 336
+Año: 2017
+
+ID: 4
+Título: Maybe in another life
+Autor: Taylor Jenkins
+Género: Romance
+Páginas: 420
+Año: 2019
+
+ID: 6
+Título: El visitante
+Autor: Stephen King
+Género: Terror
+Páginas: 592
+Año: 2018
+
+ID: 7
+Título: El dia que se perdio la cordura
+Autor: Javier Castillo
+Género: Thriller
+Páginas: 447
+Año: 2014
+
+ID: 8
+Título: Bajo la misma estrella
+Autor: John Green
+Género: Novela
+Páginas: 304
+Año: 2012
+
+ID: 9
+Título: La melancolia de los feos
+Autor: Mario Mendoza
+Género: Ficcion
+Páginas: 256
+Año: 2016
+
+ID: 17
+Título: Todo lo que nunca fuimos
+Autor: Alice Kellen
+Género: Romance
+Páginas: 420
+Año: 2018
+
