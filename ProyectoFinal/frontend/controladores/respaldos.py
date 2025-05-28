@@ -12,7 +12,7 @@ def generar_respaldo_autores():
         response.raise_for_status()
         autores = response.json()
 
-        with open("backend/Respaldos/respaldo_autores.txt", "w", encoding="utf-8") as archivo:
+        with open("ProyectoFinal/backend/Respaldos/respaldo_autores.txt", "w", encoding="utf-8") as archivo:
             for autor in autores:
                 archivo.write(f"ID: {autor['id']}\n")
                 archivo.write(f"Nombre: {autor['nombre']}\n")
@@ -28,7 +28,7 @@ def generar_respaldo_libros():
         response.raise_for_status()
         libros = response.json()
 
-        with open("backend/Respaldos/respaldo_libros.txt", "w", encoding="utf-8") as archivo:
+        with open("ProyectoFinal/backend/Respaldos/respaldo_libros.txt", "w", encoding="utf-8") as archivo:
             for libro in libros:
                 archivo.write(f"ID: {libro['id']}\n")
                 archivo.write(f"Título: {libro['titulo']}\n")

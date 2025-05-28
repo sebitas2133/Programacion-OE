@@ -10,23 +10,14 @@ Este proyecto es una aplicación desarrollada en Python. Utiliza Django exclusiv
 ## Instrucciones de instalación
 1. Clona o descarga el proyecto y ábrelo en Visual Studio Code.
 
-2. Instala las dependencias necesarias:
+2. Inicia el servidor de Django para que la interfaz pueda comunicarse con el backend:
 
-   pip install -r requirements.txt
-
-3. Aplica las migraciones para configurar la base de datos:
-
-   python manage.py migrate
-
-4. Inicia el servidor de Django para que la interfaz pueda comunicarse con el backend:
-
-   python manage.py runserver
+   python ProyectoFinal/backend/manage.py runserver
 
 ## Cómo ejecutar la aplicación
 Una vez configurada la base de datos y con el servidor Django corriendo, ejecuta la aplicación de escritorio desde el archivo principal:
-
-   cd frontend  
-   python main.py
+ 
+   python ProyectoFinal/frontend/__main__.py
 
 Esto abrirá la interfaz gráfica del sistema, conectada al backend Django que gestiona el almacenamiento de datos.
 
