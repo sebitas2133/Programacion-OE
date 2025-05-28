@@ -10,6 +10,8 @@ Este proyecto es una aplicación desarrollada en Python. Utiliza Django exclusiv
 ## Instrucciones de instalación
 1. Clona o descarga el proyecto y ábrelo en Visual Studio Code.
 
+   git clone https://github.com/sebitas2133/Programacion-OE
+
 2. Instalar la libreria de Django en la terminal.
 
    pip install django djangorestframework
@@ -18,16 +20,17 @@ Este proyecto es una aplicación desarrollada en Python. Utiliza Django exclusiv
 
    pip install requests
 
-4. Inicia el servidor de Django para que la interfaz pueda comunicarse con el backend:
+## Cómo ejecutar la aplicación
+
+1. Inicia el servidor de Django para que la interfaz pueda comunicarse con el backend:
 
    python ProyectoFinal/backend/manage.py runserver
 
-## Cómo ejecutar la aplicación
-Una vez configurada la base de datos y con el servidor Django corriendo, ejecuta la aplicación de escritorio desde el archivo principal:
+2. Una vez configurada la base de datos y con el servidor Django corriendo, ejecuta la aplicación de escritorio desde el archivo principal:
  
    python ProyectoFinal/frontend/__main__.py
 
-Esto abrirá la interfaz gráfica del sistema, conectada al backend Django que gestiona el almacenamiento de datos.
+   Esto abrirá la interfaz gráfica del sistema, conectada al backend Django que gestiona el almacenamiento de datos.
 
 ## Notas adicionales
 - No es necesario acceder a través del navegador.  
